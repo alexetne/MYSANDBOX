@@ -1,0 +1,33 @@
+#!/bin/bash
+source .env
+
+. /opt/admin-openrc
+
+cat <<EOF
+edit /etc/neutron/plugins/ml2/ml2_conf.ini
+
+[ml2]
+# ...
+type_drivers = flat,vlan,vxlan
+tenant_network_types = vxlan
+mechanism_drivers = openvswitch,l2population
+extension_drivers = port_security
+
+[ml2_type_flat]
+# ...
+flat_networks = provider
+
+[ml2_type_vxlan]
+# ...
+vni_ranges = 1:1000
+
+
+
+
+/etc/neutron/plugins/ml2/openvswitch_agent.ini
+
+[ovs]
+bridge_mappings = provider:br-provider
+local_ip = $CONTROLLER_IP
+
+EOF
