@@ -49,8 +49,8 @@ echo "NETWORK=10.10.0.0/24" >> .env
 echo "NETMASK=255.255.255.0" >> .env
 echo "GATEWAY=10.10.0.254" >> .env
 
-echo "CONTROLLER_IP=10.10.0.100" >> .env
-echo "COMPUTE_IP=10.10.0.6" >> .env
+echo "CONTROLLER_IP=10.10.0.6" >> .env
+echo "COMPUTE_IP=10.10.0.7" >> .env
 
 echo "CHRONY_CONF=/etc/chrony/chrony.conf" >> .env
 echo "HOST_CONF=/etc/hosts" >> .env

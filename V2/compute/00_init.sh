@@ -19,6 +19,9 @@ echo "SQL_NOVA=./sql_nova.sql" >> .env
 
 echo "HOST_CONF=/etc/hosts" >> .env
 
+echo "PROVIDER_BRIDGE_NAME=br-provider" >> .env
+echo "PROVIDER_INTERFACE_NAME=eth1" >> .env
+
 
 cat << EOF
 Ajoutez les variables d'env MDP de la machine maitre
